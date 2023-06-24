@@ -22,5 +22,5 @@ functions:
     handler: src/functions/hello.world
     events:
       - http:
-          path: /hello/world
+          path: /api/hello-world
           method: get
