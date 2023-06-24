@@ -1,0 +1,26 @@
+service: nsartech-vault-api
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: eu-west-2
+  stage: ${opt:stage, 'dev'}
+  environment:
+    ENVIRONMENT: ${self:provider.stage}
+
+custom:
+  serverless-offline:
+    host: 0.0.0.0
+    httpPort: 3001
+
+functions:
+  helloWorld:
+    handler: src/functions/hello.world
+    events:
+      - http:
+          path: /hello/world
+          method: get
