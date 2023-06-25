@@ -21,4 +21,12 @@ describe("Create User", () => {
     }));
     expect(response.statusCode).toEqual(400);
   });
+
+  it("should return a 201 and store the information in the db", async () => {
+    const response = await request
+      .post("/api/user")
+      .send(payload());
+
+    expect(response.statusCode).toEqual(201);
+  })
 });
