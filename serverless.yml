@@ -18,9 +18,9 @@ custom:
     httpPort: 3001
 
 functions:
-  helloWorld:
-    handler: src/functions/hello.world
+  createUser:
+    handler: src/functions/user.createHandler
     events:
       - http:
-          path: /api/hello-world
-          method: get
+          path: /api/user
+          method: post
