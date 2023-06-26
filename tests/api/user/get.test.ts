@@ -4,11 +4,17 @@ import { User } from '../../../src/services/user';
 
 const request = supertest('http://0.0.0.0:3001/dev');
 
+const payload = ({
+  name = 'Some One',
+  dob = '01/01/1999',
+  email = 'some.one@email.com',
+} = {}) => ({ name, dob, email });
+
 describe('Get User', () => {
   let user: User;
 
   beforeEach(async () => {
-    const createUser = await request.post('/api/user');
+    const createUser = await request.post('/api/user').send(payload());
     user = createUser.body;
   });
 

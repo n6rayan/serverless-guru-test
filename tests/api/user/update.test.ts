@@ -20,7 +20,7 @@ describe('Update User', () => {
 
   it('should throw a 400 if the payload is incorrect', async () => {
     const response = await request
-      .patch(`api/user/${user.id}`)
+      .patch(`/api/user/${user.id}`)
       .send(payload({ email: 'wrong format' }));
 
     expect(response.body).toEqual(
