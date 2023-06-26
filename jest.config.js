@@ -2,16 +2,7 @@ module.exports = {
   testEnvironment: 'node',
   roots: ['<rootDir>/tests'],
   coverageDirectory: './coverage',
-  reporters: [
-    'default',
-    [
-      'jest-junit',
-      {
-        outputDirectory: './junit',
-        outputName: 'sls-crud-rest-api.xml',
-      },
-    ],
-  ],
+  reporters: ['default', 'jest-junit'],
   transformIgnorePatterns: ['^.+\\.js$'],
   coverageReporters: ['text', 'lcov', 'text-summary'],
   testMatch: ['**/*.test.ts'],
