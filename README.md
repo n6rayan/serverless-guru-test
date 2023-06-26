@@ -1,8 +1,8 @@
 # Serveress Guru Tech Test
 
-| Branch | Deploy status                              | Build status                      |
-| ------ | ------------------------------------------ | --------------------------------- |
-| main   | [![Deploy status]([deploy-badge])][deploy] | [![Build status]([ci-badge])][ci] |
+| Branch | Deploy status                                                                                                      | Build status                                                                                                 |
+| ------ | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
+| main   | [![Deploy status](https://github.com/n6rayan/serverless-guru-test/actions/workflows/deploy.yml/badge.svg)][deploy] | [![Build status](https://github.com/n6rayan/serverless-guru-test/actions/workflows/build.yml/badge.svg)][ci] |
 
 ### Install Dependencies
 - `npm i`
@@ -41,6 +41,4 @@ curl -v -X GET http://0.0.0.0:3001/dev/api/{userId}
 ```
 
 [ci]: https://github.com/n6rayan/serverless-guru-test/actions/workflows/build.yml
-[ci-badge]: https://github.com/n6rayan/serverless-guru-test/actions/workflows/build.yml/badge.svg
 [deploy]: https://github.com/n6rayan/serverless-guru-test/actions/workflows/deploy.yml
-[deploy-badge]: https://github.com/n6rayan/serverless-guru-test/actions/workflows/deploy.yml/badge.svg
