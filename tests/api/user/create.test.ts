@@ -29,6 +29,11 @@ describe('Create User', () => {
   it('should return a 201 and store the information in the db', async () => {
     const response = await request.post('/api/user').send(payload());
 
-    expect(response.statusCode).toEqual(201);
+    expect(response.statusCode).toEqual(200);
+    expect(response.body).toEqual(
+      expect.objectContaining({
+        ...payload(),
+      })
+    );
   });
 });

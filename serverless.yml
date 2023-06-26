@@ -24,6 +24,12 @@ functions:
       - http:
           path: /api/user
           method: post
+  deleteUser:
+    handler: src/functions/user.deleteHandler
+    events:
+      - http:
+          path: /api/user/{userId}
+          method: delete
 
 resources:
   Resources:
@@ -32,10 +38,10 @@ resources:
       Properties:
         TableName: users
         AttributeDefinitions:
-          - AttributeName: email
+          - AttributeName: id
             AttributeType: S
         KeySchema:
-          - AttributeName: email
+          - AttributeName: id
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 1

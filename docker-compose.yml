@@ -44,8 +44,8 @@ services:
       aws --version &&
       aws dynamodb --endpoint-url http://dynamodb:8000
       create-table --table-name users
-      --attribute-definitions AttributeName=email,AttributeType=S
-      --key-schema AttributeName=email,KeyType=HASH
+      --attribute-definitions AttributeName=id,AttributeType=S
+      --key-schema AttributeName=id,KeyType=HASH
       --provisioned-throughput ReadCapacityUnits=5,WriteCapacityUnits=5'
     depends_on:
       dynamodb:
