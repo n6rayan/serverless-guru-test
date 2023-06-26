@@ -5,6 +5,7 @@ export const validator = (
   schema: ZodSchema
 ): Pick<MiddlewareObj, 'before' | 'onError'> => ({
   before: async (request) => {
+    console.log('Event received: ', JSON.stringify(request.event));
     try {
       request.event = await schema.parseAsync(request.event);
     } catch (err) {

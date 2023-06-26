@@ -11,6 +11,16 @@ provider:
   stage: ${opt:stage, 'dev'}
   environment:
     ENVIRONMENT: ${self:provider.stage}
+  iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+            - dynamodb:UpdateItem
+            - dynamodb:GetItem
+            - dynamodb:DeleteItem
+            - dynamodb:PutItem
+          Resource: !Sub arn:aws:dynamodb:${AWS::Region}:${AWS::AccountId}:table/users
 
 custom:
   serverless-offline:
