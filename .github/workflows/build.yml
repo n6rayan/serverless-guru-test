@@ -44,7 +44,7 @@ jobs:
         if: success() || failure()
         with:
           name: test-results
-          path: junit/junit.xml
+          path: junit/sls-crud-rest-api.xml
           reporter: jest-junit
 
       - name: Docker Status - Fail
