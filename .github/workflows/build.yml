@@ -1,6 +1,6 @@
 name: SLS CRUD REST API CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -32,8 +32,9 @@ jobs:
         run: docker compose up -d
 
       # Replace with something snazzier
+      # serverless-plugin-typescript is the reason for this
       - name: Wait For Stack
-        run: sleep 120
+        run: sleep 180
 
       - name: Run Tests
         run: npm test -- --runInBand
