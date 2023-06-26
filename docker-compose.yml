@@ -20,8 +20,6 @@ services:
       - "3001:3001"
     environment:
       AWS_REGION: eu-west-2
-      AWS_ACCESS_KEY_ID: KEY
-      AWS_SECRET_ACCESS_KEY: SECRET
       AWS_DYNAMODB_ENDPOINT: http://dynamodb:8000
     volumes:
       - ./:/home/node/app:cached
