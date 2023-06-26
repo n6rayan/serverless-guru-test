@@ -30,6 +30,18 @@ functions:
       - http:
           path: /api/user/{userId}
           method: delete
+  getUser:
+    handler: src/functions/user.getHandler
+    events:
+      - http:
+          path: /api/user/{userId}
+          method: get
+  patchUser:
+    handler: src/functions/user.patchHandler
+    events:
+      - http:
+          path: /api/user/{userId}
+          method: patch
 
 resources:
   Resources:
